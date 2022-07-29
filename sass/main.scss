@@ -41,6 +41,9 @@ header{
     font-family: Roboto;
     font-size: 12px;
 }
+a{
+    text-decoration: none;
+}
 #main_form{
     width: 100%;
     display: flex;
@@ -213,6 +216,13 @@ header{
     align-items: center;
     height: 250px;
     margin-bottom: 15px;
+    position: relative;
+    &:visited{
+        color: black;
+    }
+}
+.restaurants_article_content{
+    width:100%;
 }
 .restaurants_article_images{
 	height: 180px;
@@ -239,7 +249,18 @@ header{
     padding-right: 10px;
     padding-top: 10px;
 }
-
+.btn_nouveau{
+    height:20px;
+    line-height: 20px;
+    text-align: center;
+    background-color: #99E2D0;
+    color: darken($color: #99E2D0, $amount: 50%);
+    font-weight: bold;
+    position: absolute;
+    bottom:220px;
+    right: 20px;
+    width: 75px;
+}
 footer{
     width: 100%;
     background-color: #353535;
@@ -268,7 +289,6 @@ footer a{
     text-decoration: none;
     color: $couleur_blanc;
 }
-
 .like1 .fa-heart{
     font-size: 23px;
     cursor: pointer;
@@ -281,11 +301,111 @@ footer a{
     color: #FFFFFF;
   }
   .like1 .fa-heart{
-    transition: color 1s ease-out;
+    transition: color 3s ease-out;
   }
   .like1:hover .fa-heart{
     @include couleur_degrade;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color:transparent;
   }
+#restaurants_liste a{
+    color:black;
+}
+/* PAGES Restaurants */
+#retour {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    width: 20%;
+    align-items: center;
+    .fa-arrow-left{
+        font-size: 20px;
+        color: black;
+    }
+}
+#liste_menu{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: $couleur_bg_gris_ligth;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+#titre_restaurant{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.titre_restaurant_text{
+    padding-top: 20px;
+    font-family: Shrikhand;
+    font-size: 18px;
+    padding-left: 20px;
+}
+
+.commander{
+    border-radius:20px;
+    box-shadow: 0px 0px 15px 0 #00000038;
+    color: $couleur_blanc;
+    font-size: 15px;
+    text-align: center;
+    border: none;
+    @include couleur_degrade;
+}
+.titre_carte_restaurant {
+    padding-left: 20px;
+    padding-top: 20px;
+}
+.bordure_bas_verte{
+    width: 30px;
+    border-bottom: #99E2D0 solid 3px;
+    padding-top: 5px;
+}
+.liste_elements{
+    padding-left: 20px;
+    padding-top: 20px;
+    
+}
+.elements{
+    border-radius:10px;
+    width:95%;
+    box-shadow: 0px 0px 15px 0 #00000038;
+    background-color: $couleur_blanc;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 50px;
+    margin-bottom: 15px;
+    justify-content: space-between;
+}
+
+.texte_elements{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+}
+.titre_element{
+    font-weight: bold;
+    padding-bottom: 5px;
+    font-size: 15px;
+}
+.prix_elements{
+    font-weight: bold;
+    font-size: 15px;
+    padding-right: 20px;
+}
+#restaurant_btn{
+    display: flex;
+    justify-content: center;
+    height: 45px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    input{
+        width: 150px;
+    }
+}
+
