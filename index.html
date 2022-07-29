@@ -12,23 +12,25 @@
 
 <body>
     <header>
-        <div id="logo"><img src="images/logo/ohmyfood.png" /></div>
+        <div id="logo"></div>
     </header>
     <main>
         <section id="main_form">
-            <div id="location_formulaire"></div>
             <div id="formulaire">
                 <form method="post" action="#">
-                    <input type="text" name="votre_rechere" placeholder="Paris, Belleville"  />
+                    <div class="formulaire_zone_text">
+                        <div id="location_formulaire"><i class="fa-solid fa-location-dot"></i></div>
+                        <input type="text" name="votre_recherche" placeholder="Paris, Belleville" class="formulaire_input" />
+                    </div>
+                    <div id="main_reserver">
+                        <div class="main_reserver_ss">
+                            <div class="main_reserver_text1">Réservez le menu qui vous convient</div>
+                            <div class="main_reserver_text2">Découvrez des restaurants d'exception, sélectionnés par nos soins </div>
+                            <input type="button" name="Explore" value="Explorez nos restaurants" class="btn_explorer" />
+                        </div>
+                    </div>
                 </form>
             </div>
-        </section>
-        <section id="main_reserver">
-            <div id="main_reserver_text">
-                <p class="main_reserver_text1">Réservez le menu qui vous convient</p>
-                <p class="main_reserver_text2">Découvrez des restaurants d'exception, sélectionnés par nos soins </p>
-            </div>
-            <div id="main_reserver_button"></div>
         </section>
         <section id="fonctionnement">
             <div id="fonctionnement_main">
