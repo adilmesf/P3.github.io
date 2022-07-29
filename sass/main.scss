@@ -1,0 +1,225 @@
+@font-face {
+    font-family: Shrikhand;
+    src: url(../../css/font/Shrikhand-Regular.otf);
+  }
+@font-face {
+    font-family: Roboto;
+    src: url(../../css/font/Roboto-Regular.ttf);
+}
+$couleur_primaire:#9356DC;
+$couleur_secondaire:#FF79DA;
+$couleur_tertiaire:#99E2D0;
+$couleur_bg_gris:#eaeaea;
+$couleur_bg_gris_ligth:#f6f6f6;
+$couleur_blanc:#FFFFFF;
+
+@mixin element_titre {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 18px;
+    padding-left: 30px;
+  }
+@mixin couleur_degrade{
+    background: linear-gradient($couleur_primaire, $couleur_secondaire);
+    
+}
+
+header{
+    display: flex;
+    align-content: center;
+}
+#logo{
+    margin: 0 auto;
+}
+*{
+    font-family: Roboto;
+    font-size: 12px;
+}
+#main_form{
+    width: 100%;
+    background-color: $couleur_bg_gris;
+    display: flex;
+    justify-content: center;
+}
+#main_form input{
+    background-color: $couleur_bg_gris;
+    border: none;
+    height: 50px;
+}
+#main_reserver_text{
+    width:80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 400px;
+}
+.main_reserver_text1{
+    font-weight: bold;
+}
+
+#fonctionnement{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+#fonctionnement_main{
+    margin: 0 auto;
+    width: 100%;
+}
+.fonctionnement_titre{
+    @include element_titre;
+}
+.fonctionnement_content{
+    display: flex;
+    flex-direction: column;
+}
+.fonctionnement_article{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+    justify-content: space-around;
+    a{
+        text-decoration: none;
+      }
+}
+
+.article_txt{
+	border-radius:20px;
+	width:75%;
+	height: 53px;
+	box-shadow: 0px 0px 15px 0 #00000038;
+    background-color: $couleur_blanc;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    &:hover, &:focus{
+        background-color: lighten($couleur_primaire,30%);
+        .article_ico{
+            color:$couleur_primaire;
+        }
+    }
+
+}
+.article_content{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.article_num{
+	height: 30px;
+	width: 30px;
+	border-radius: 15px;
+	background-color: $couleur_primaire;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+    right: 20px;
+    color: $couleur_blanc;
+}
+.article_ico{
+    padding-left: 31px;
+    padding-right: 17px;
+}
+#restaurants_liste{
+    background-color: $couleur_bg_gris_ligth;
+}
+#restaurants_main{
+    margin: 0 auto;
+}
+.restaurants_titre{
+    @include element_titre;
+}
+.restaurants_content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+.restaurants_article{
+	border-radius:20px;
+	width:80%;
+	box-shadow: 0px 0px 15px 0 #00000038;
+    background-color: $couleur_blanc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 250px;
+    margin-bottom: 15px;
+}
+.restaurants_article_images{
+	height: 180px;
+    overflow: hidden;
+    width: 100%;
+    border-top-left-radius:20px;
+    border-top-right-radius:20px;
+    background-size: cover;
+    background-position: center;
+}
+.restaurants_article_desc{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+.restaurants_article_txt{
+    padding-left: 10px;
+}
+.restaurants_article_txt_gras{
+    font-weight: bold;
+}
+.restaurants_article_ico{
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+footer{
+    width: 100%;
+    background-color: #353535;
+}
+.footer_content{
+    color: $couleur_blanc;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+.footer_titre{
+    padding-top: 20px;
+    font-family: Shrikhand;
+    font-size: 18px;
+}
+footer ul{
+    list-style-type: none;
+	margin:0;
+	padding:0;
+}
+footer li{
+    padding-top: 10px;
+}
+footer a{
+    text-decoration: none;
+    color: $couleur_blanc;
+}
+
+.like1 .fa-heart{
+    font-size: 23px;
+    cursor: pointer;
+  }
+  .like1 .fa-regular{
+    position: relative;
+    left: 27px;
+  }
+  .like1 .fa-solid{
+    color: #FFFFFF;
+  }
+  .like1 .fa-heart{
+    transition: color 1s ease-out;
+  }
+  .like1:hover .fa-heart{
+    @include couleur_degrade;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color:transparent;
+  }

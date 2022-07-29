@@ -1,0 +1,244 @@
+@font-face {
+  font-family: Shrikhand;
+  src: url(../../css/font/Shrikhand-Regular.otf);
+}
+@font-face {
+  font-family: Roboto;
+  src: url(../../css/font/Roboto-Regular.ttf);
+}
+header {
+  display: flex;
+  align-content: center;
+}
+
+#logo {
+  margin: 0 auto;
+}
+
+* {
+  font-family: Roboto;
+  font-size: 12px;
+}
+
+#main_form {
+  width: 100%;
+  background-color: #eaeaea;
+  display: flex;
+  justify-content: center;
+}
+
+#main_form input {
+  background-color: #eaeaea;
+  border: none;
+  height: 50px;
+}
+
+#main_reserver_text {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 400px;
+}
+
+.main_reserver_text1 {
+  font-weight: bold;
+}
+
+#fonctionnement {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#fonctionnement_main {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.fonctionnement_titre {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 18px;
+  padding-left: 30px;
+}
+
+.fonctionnement_content {
+  display: flex;
+  flex-direction: column;
+}
+
+.fonctionnement_article {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 20px;
+  justify-content: space-around;
+}
+.fonctionnement_article a {
+  text-decoration: none;
+}
+
+.article_txt {
+  border-radius: 20px;
+  width: 75%;
+  height: 53px;
+  box-shadow: 0px 0px 15px 0 rgba(0, 0, 0, 0.2196078431);
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.article_txt:hover, .article_txt:focus {
+  background-color: #e4d5f6;
+}
+.article_txt:hover .article_ico, .article_txt:focus .article_ico {
+  color: #9356DC;
+}
+
+.article_content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.article_num {
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  background-color: #9356DC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  right: 20px;
+  color: #FFFFFF;
+}
+
+.article_ico {
+  padding-left: 31px;
+  padding-right: 17px;
+}
+
+#restaurants_liste {
+  background-color: #f6f6f6;
+}
+
+#restaurants_main {
+  margin: 0 auto;
+}
+
+.restaurants_titre {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 18px;
+  padding-left: 30px;
+}
+
+.restaurants_content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.restaurants_article {
+  border-radius: 20px;
+  width: 80%;
+  box-shadow: 0px 0px 15px 0 rgba(0, 0, 0, 0.2196078431);
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 250px;
+  margin-bottom: 15px;
+}
+
+.restaurants_article_images {
+  height: 180px;
+  overflow: hidden;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+.restaurants_article_desc {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.restaurants_article_txt {
+  padding-left: 10px;
+}
+
+.restaurants_article_txt_gras {
+  font-weight: bold;
+}
+
+.restaurants_article_ico {
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+footer {
+  width: 100%;
+  background-color: #353535;
+}
+
+.footer_content {
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+.footer_titre {
+  padding-top: 20px;
+  font-family: Shrikhand;
+  font-size: 18px;
+}
+
+footer ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer li {
+  padding-top: 10px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.like1 .fa-heart {
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.like1 .fa-regular {
+  position: relative;
+  left: 27px;
+}
+
+.like1 .fa-solid {
+  color: #FFFFFF;
+}
+
+.like1 .fa-heart {
+  transition: color 1s ease-out;
+}
+
+.like1:hover .fa-heart {
+  background: linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}/*# sourceMappingURL=main.css.map */
