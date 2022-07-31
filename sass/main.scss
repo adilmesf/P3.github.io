@@ -381,12 +381,29 @@ footer a{
     height: 50px;
     margin-bottom: 15px;
     justify-content: space-between;
+    overflow: hidden;
+    /*transition-duration: 1.5s;
+    transition-delay: 0.5s;
+    animation: affichage 2s;*/
+    animation: affichage .6s;
+    animation-timing-function: cubic-bezier(.5,1.58,.34,.82);
+    animation-fill-mode: both;
+    transform: scale(0);
+	&:hover > .box{
+        display: flex;
+        width: 10%;
+        align-items: center;
+        justify-content: space-around;
+	}
 }
 
 .texte_elements{
     display: flex;
     flex-direction: column;
     padding-left: 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 .titre_element{
     font-weight: bold;
@@ -409,3 +426,53 @@ footer a{
     }
 }
 
+.box{
+	display: none;
+    background-color: $couleur_tertiaire;
+    height: inherit;
+    animation-duration: 1s;
+    animation-name: slidein;
+    .check{
+        animation-name: spin;
+        animation-duration: 1s;
+        background-color: $couleur_tertiaire;
+        color: $couleur_blanc;
+    }
+}
+.fa-circle-check{
+    font-size: 18px;
+}
+
+@keyframes slidein {
+    from {
+      width: 0%;
+    }
+  
+    to {
+      width: 10%;
+    }
+}
+@keyframes spin {
+    from {
+        transform: rotate(180deg);
+    }
+  
+    to {
+        transform: rotate(0deg);
+    }
+}
+@keyframes affichage {
+    0% {
+        transform: scale(0)
+      }
+      100% {
+        transform: scale(1);
+      }
+    
+}
+
+@for $i from 0 to 9 {
+    .delay-#{$i} {
+      animation-delay:  #{$i/10}s;
+    }
+}
