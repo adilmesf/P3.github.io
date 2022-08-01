@@ -72,6 +72,12 @@ a{
         font-size: 20px;
     }
 }
+main{
+    margin: 0 auto;
+    /*@media screen and (min-width: 992px) {
+        width: 55%;
+    }*/
+}
 #main_form input{
     background-color: $couleur_bg_gris;
     border: none;
@@ -89,7 +95,12 @@ a{
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-    width: 100%;
+    @media screen and (max-width: 768px) {
+        width: 100%;
+    }
+    @media screen and (min-width: 768px) {
+        width: 75%;
+    }
 }
 .main_reserver_ss{
     display: flex;
@@ -167,13 +178,16 @@ a{
             color:$couleur_primaire;
         }
     }
-
+    & .fa-solid{
+        font-size:14px;
+    }
 }
 .article_content{
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
+    font-size:20px;
 }
 .article_num{
 	height: 30px;
@@ -190,6 +204,9 @@ a{
 .article_ico{
     padding-left: 31px;
     padding-right: 17px;
+}
+.article_sub{
+    font-size: 14px;
 }
 #restaurants_liste{
     background-color: $couleur_bg_gris_ligth;
@@ -253,8 +270,8 @@ a{
     height:20px;
     line-height: 20px;
     text-align: center;
-    background-color: #99E2D0;
-    color: darken($color: #99E2D0, $amount: 50%);
+    background-color: $couleur_tertiaire;
+    color: darken($color: $couleur_tertiaire, $amount: 50%);
     font-weight: bold;
     position: absolute;
     bottom:220px;
@@ -312,6 +329,7 @@ footer a{
 #restaurants_liste a{
     color:black;
 }
+
 /* PAGES Restaurants */
 #retour {
     display: flex;
@@ -382,9 +400,6 @@ footer a{
     margin-bottom: 15px;
     justify-content: space-between;
     overflow: hidden;
-    /*transition-duration: 1.5s;
-    transition-delay: 0.5s;
-    animation: affichage 2s;*/
     animation: affichage .6s;
     animation-timing-function: cubic-bezier(.5,1.58,.34,.82);
     animation-fill-mode: both;
@@ -395,6 +410,12 @@ footer a{
         align-items: center;
         justify-content: space-around;
 	}
+    @media screen and (min-width: 768px) {
+        width: 75%;
+    }
+    @media screen and (min-width: 992px) {
+        width: 55%;
+    }
 }
 
 .texte_elements{
@@ -464,15 +485,15 @@ footer a{
 @keyframes affichage {
     0% {
         transform: scale(0)
-      }
-      100% {
+    }
+    100% {
         transform: scale(1);
-      }
+    }
     
 }
 
 @for $i from 0 to 9 {
     .delay-#{$i} {
-      animation-delay:  #{$i/10}s;
+      animation-delay:  #{calc($i / 10)}s;
     }
 }

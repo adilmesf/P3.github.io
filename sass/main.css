@@ -62,6 +62,13 @@ a {
   font-size: 20px;
 }
 
+main {
+  margin: 0 auto;
+  /*@media screen and (min-width: 992px) {
+      width: 55%;
+  }*/
+}
+
 #main_form input {
   background-color: #eaeaea;
   border: none;
@@ -90,7 +97,16 @@ a {
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  #main_reserver {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 768px) {
+  #main_reserver {
+    width: 75%;
+  }
 }
 
 .main_reserver_ss {
@@ -179,12 +195,16 @@ a {
 .article_txt:hover .article_ico, .article_txt:focus .article_ico {
   color: #9356DC;
 }
+.article_txt .fa-solid {
+  font-size: 14px;
+}
 
 .article_content {
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
+  font-size: 20px;
 }
 
 .article_num {
@@ -203,6 +223,10 @@ a {
 .article_ico {
   padding-left: 31px;
   padding-right: 17px;
+}
+
+.article_sub {
+  font-size: 14px;
 }
 
 #restaurants_liste {
@@ -428,9 +452,6 @@ footer a {
   margin-bottom: 15px;
   justify-content: space-between;
   overflow: hidden;
-  /*transition-duration: 1.5s;
-  transition-delay: 0.5s;
-  animation: affichage 2s;*/
   -webkit-animation: affichage 0.6s;
           animation: affichage 0.6s;
   -webkit-animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
@@ -444,6 +465,16 @@ footer a {
   width: 10%;
   align-items: center;
   justify-content: space-around;
+}
+@media screen and (min-width: 768px) {
+  .elements {
+    width: 75%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .elements {
+    width: 55%;
+  }
 }
 
 .texte_elements {
