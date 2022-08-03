@@ -21,7 +21,6 @@ $couleur_blanc:#FFFFFF;
   }
 @mixin couleur_degrade{
     background: linear-gradient($couleur_primaire, $couleur_secondaire);
-    
 }
 
 header{
@@ -30,12 +29,13 @@ header{
 }
 #logo{
     margin: 0 auto;
-    background-image: url("../../images/logo/ohmyfood.png");
-    background-size:40%;
-    background-repeat: no-repeat;
-    background-position: center;
     width: 100%;
-    height: 70px;
+    text-align: center;
+    img{
+        width: 50%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
 }
 *{
     font-family: Roboto;
@@ -74,9 +74,6 @@ a{
 }
 main{
     margin: 0 auto;
-    /*@media screen and (min-width: 992px) {
-        width: 55%;
-    }*/
 }
 #main_form input{
     background-color: $couleur_bg_gris;
@@ -95,12 +92,7 @@ main{
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-    @media screen and (max-width: 768px) {
-        width: 100%;
-    }
-    @media screen and (min-width: 768px) {
-        width: 75%;
-    }
+
 }
 .main_reserver_ss{
     display: flex;
@@ -110,6 +102,7 @@ main{
     flex-direction: column;
     width: 80%;
     padding-bottom: 60px;
+    align-items: center;
 }
 .main_reserver_text1{
     font-weight: bold;
@@ -127,7 +120,7 @@ main{
 }
 .btn_explorer{
 	border-radius:20px;
-	width:80%;
+	width:300px;
 	box-shadow: 0px 0px 15px 0 #00000038;
     color: $couleur_blanc;
     font-weight: bold;
@@ -152,6 +145,12 @@ main{
 .fonctionnement_content{
     display: flex;
     flex-direction: column;
+    @media screen and (min-width: 992px) 
+    {
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+    }
 }
 .fonctionnement_article{
     display: flex;
@@ -160,12 +159,14 @@ main{
     justify-content: space-around;
     a{
       text-decoration: none;
+      color: black;
     }
 }
 
 .article_txt{
 	border-radius:20px;
-	width:75%;
+	/*width:60%;*/
+    width:300px;
 	height: 53px;
 	box-shadow: 0px 0px 15px 0 #00000038;
     background-color: $couleur_blanc;
@@ -180,6 +181,16 @@ main{
     }
     & .fa-solid{
         font-size:14px;
+    }
+    @media screen and (min-width: 768px) {
+        flex-direction: column;
+        justify-content: center;
+        width: 400px;
+    }
+    @media screen and (min-width: 992px) {
+        flex-direction: row;
+        justify-content: center;
+        width: 300px;
     }
 }
 .article_content{
@@ -222,6 +233,11 @@ main{
     flex-direction: column;
     width: 100%;
     align-items: center;
+    @media screen and (min-width: 992px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
 }
 .restaurants_article{
 	border-radius:20px;
@@ -237,6 +253,13 @@ main{
     &:visited{
         color: black;
     }
+    @media screen and (min-width: 768px) {
+        width: 75%;
+     }
+    @media screen and (min-width: 992px) {
+       width: 40%;
+    }
+
 }
 .restaurants_article_content{
     width:100%;
@@ -343,6 +366,9 @@ footer a{
         color: black;
     }
 }
+#main_restaurant{
+    margin-top: -50px;
+}
 #liste_menu{
     display: flex;
     flex-direction: column;
@@ -356,6 +382,10 @@ footer a{
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    @media screen and (min-width: 992px) {
+        justify-content: center;
+     }  
+    
 }
 
 .titre_restaurant_text{
@@ -363,8 +393,15 @@ footer a{
     font-family: Shrikhand;
     font-size: 18px;
     padding-left: 20px;
+    @media screen and (min-width: 992px) {
+        font-size: 25px;
+     }  
 }
-
+.entrees_restaurant .plats_restaurants .desserts_restaurants {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
 .commander{
     border-radius:20px;
     box-shadow: 0px 0px 15px 0 #00000038;
@@ -386,7 +423,11 @@ footer a{
 .liste_elements{
     padding-left: 20px;
     padding-top: 20px;
-    
+    @media screen and (min-width: 992px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+     }  
 }
 .elements{
     border-radius:10px;
@@ -404,7 +445,7 @@ footer a{
     animation-timing-function: cubic-bezier(.5,1.58,.34,.82);
     animation-fill-mode: both;
     transform: scale(0);
-	&:hover > .box{
+	&:hover .box{
         display: flex;
         width: 10%;
         align-items: center;
@@ -414,7 +455,7 @@ footer a{
         width: 75%;
     }
     @media screen and (min-width: 992px) {
-        width: 55%;
+        width: 30%;
     }
 }
 
@@ -491,7 +532,14 @@ footer a{
     }
     
 }
-
+.img_restaurant{
+    background-size: cover;
+    background-position: center;
+	max-width: 100%;
+    max-height: 100%;
+	height: 300px;
+    overflow: hidden;
+}
 @for $i from 0 to 9 {
     .delay-#{$i} {
       animation-delay:  #{calc($i / 10)}s;
