@@ -19,9 +19,12 @@ $couleur_shadow:rgba(128, 128, 128, 0.748);
     padding-bottom: 20px;
     font-size: 18px;
   }
-@mixin couleur_degrade{
-    /*background: linear-gradient($couleur_primaire, $couleur_secondaire);*/
-    background: linear-gradient(157deg, $couleur_secondaire 0%, $couleur_primaire 100%);;
+@mixin couleur_degrade ($light){
+    @if ($light == "normal") {
+    background: linear-gradient(157deg, $couleur_secondaire 0%, $couleur_primaire 100%);
+    } @else {
+        background: linear-gradient(157deg, lighten($couleur_secondaire,10%) 0%, lighten($couleur_primaire,10%) 100%);
+    }
 }
 @mixin bordure {
     border: thin solid black;
@@ -134,8 +137,11 @@ main{
     font-size: 15px;
     text-align: center;
     cursor: pointer;
-    @include couleur_degrade;
-
+    @include couleur_degrade("normal");
+    &:hover{
+        @include couleur_degrade("clair");
+        box-shadow: 0px 0px 15px 0 darken($couleur_shadow,40%);
+    }
 }
 
 #fonctionnement{
@@ -335,7 +341,7 @@ main{
 }
 .restaurants_article_ico{
     padding-right: 10px;
-    padding-top: 10px;
+    padding-top: 20px;
 }
 .btn_nouveau{
     height:20px;
@@ -392,7 +398,7 @@ footer a{
     transition: color 3s ease-out;
   }
   .like1:hover .fa-heart{
-    @include couleur_degrade;
+    @include couleur_degrade("normal");
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color:transparent;
@@ -461,7 +467,11 @@ footer a{
     text-align: center;
     border: none;
     cursor: pointer;
-    @include couleur_degrade;
+    @include couleur_degrade("normal");
+    &:hover{
+        @include couleur_degrade("clair");
+        box-shadow: 0px 0px 15px 0 darken($couleur_shadow,40%);
+    }
 }
 .titre_carte_restaurant {
     padding-left: 20px;
@@ -493,14 +503,14 @@ footer a{
     margin-bottom: 15px;
     justify-content: space-between;
     overflow: hidden;
-    animation: affichage .6s;
+    animation: affichage 1s;
     animation-timing-function: cubic-bezier(.5,1.58,.34,.82);
     animation-fill-mode: both;
     transform: scale(0);
     margin-right: 15px;
 	&:hover .box{
         display: flex;
-        width: 10%;
+        width: 50px;
         align-items: center;
         justify-content: space-around;
 	}
@@ -516,19 +526,33 @@ footer a{
     display: flex;
     flex-direction: column;
     padding-left: 10px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+    width: auto;
+    overflow: hidden;
 }
 .titre_element{
     font-weight: bold;
     padding-bottom: 5px;
     font-size: 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.description_element{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.groupe_element{
+    display: flex;
+    flex-direction: row;
+    height: inherit;
+    align-items: center;
 }
 .prix_elements{
     font-weight: bold;
     font-size: 15px;
     padding-right: 20px;
+    text-align: center;
 }
 #restaurant_btn{
     display: flex;
@@ -547,9 +571,10 @@ footer a{
     height: inherit;
     animation-duration: 1s;
     animation-name: slidein;
+    position: relative;
     .check{
         animation-name: spin;
-        animation-duration: 1s;
+        animation-duration: 1.5s;
         background-color: $couleur_tertiaire;
         color: $couleur_blanc;
     }
@@ -560,11 +585,11 @@ footer a{
 
 @keyframes slidein {
     from {
-      width: 0%;
+      width: 0px;
     }
   
     to {
-      width: 10%;
+      width: 50px;
     }
 }
 @keyframes spin {
@@ -598,6 +623,7 @@ footer a{
       animation-delay:  #{calc($i / 10)}s;
     }
 }
+
 #loader{
     height: 100px;
     width: 100px;
@@ -606,9 +632,8 @@ footer a{
     border-left: 10px solid $couleur_tertiaire;
     border-right: 10px solid $couleur_tertiaire;
     border-radius: 50%;
-    animation: spin 2s linear 1s;
+    animation: tourne 2s linear 1s;
     opacity: 0;
-
     margin: auto;
     position: absolute;
     top:0;
@@ -617,7 +642,7 @@ footer a{
     bottom: 0;
 }
 
-@keyframes spin {
+@keyframes tourne {
     0%{
         transform: rotate(0deg);
         opacity: 1;

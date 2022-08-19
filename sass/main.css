@@ -138,8 +138,11 @@ main {
   font-size: 15px;
   text-align: center;
   cursor: pointer;
-  /*background: linear-gradient($couleur_primaire, $couleur_secondaire);*/
   background: linear-gradient(157deg, #FF79DA 0%, #9356DC 100%);
+}
+.btn_explorer:hover {
+  background: linear-gradient(157deg, #fface8 0%, #ae80e5 100%);
+  box-shadow: 0px 0px 15px 0 rgba(26, 26, 26, 0.748);
 }
 
 #fonctionnement {
@@ -384,7 +387,7 @@ main {
 
 .restaurants_article_ico {
   padding-right: 10px;
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 .btn_nouveau {
@@ -453,7 +456,6 @@ footer a {
 }
 
 .like1:hover .fa-heart {
-  /*background: linear-gradient($couleur_primaire, $couleur_secondaire);*/
   background: linear-gradient(157deg, #FF79DA 0%, #9356DC 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -534,8 +536,11 @@ footer a {
   text-align: center;
   border: none;
   cursor: pointer;
-  /*background: linear-gradient($couleur_primaire, $couleur_secondaire);*/
   background: linear-gradient(157deg, #FF79DA 0%, #9356DC 100%);
+}
+.commander:hover {
+  background: linear-gradient(157deg, #fface8 0%, #ae80e5 100%);
+  box-shadow: 0px 0px 15px 0 rgba(26, 26, 26, 0.748);
 }
 
 .titre_carte_restaurant {
@@ -573,8 +578,8 @@ footer a {
   margin-bottom: 15px;
   justify-content: space-between;
   overflow: hidden;
-  -webkit-animation: affichage 0.6s;
-          animation: affichage 0.6s;
+  -webkit-animation: affichage 1s;
+          animation: affichage 1s;
   -webkit-animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
           animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
   -webkit-animation-fill-mode: both;
@@ -584,7 +589,7 @@ footer a {
 }
 .elements:hover .box {
   display: flex;
-  width: 10%;
+  width: 50px;
   align-items: center;
   justify-content: space-around;
 }
@@ -603,21 +608,37 @@ footer a {
   display: flex;
   flex-direction: column;
   padding-left: 10px;
+  width: auto;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .titre_element {
   font-weight: bold;
   padding-bottom: 5px;
   font-size: 15px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.description_element {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.groupe_element {
+  display: flex;
+  flex-direction: row;
+  height: inherit;
+  align-items: center;
 }
 
 .prix_elements {
   font-weight: bold;
   font-size: 15px;
   padding-right: 20px;
+  text-align: center;
 }
 
 #restaurant_btn {
@@ -639,12 +660,13 @@ footer a {
           animation-duration: 1s;
   -webkit-animation-name: slidein;
           animation-name: slidein;
+  position: relative;
 }
 .box .check {
   -webkit-animation-name: spin;
           animation-name: spin;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
   background-color: #99E2D0;
   color: #FFFFFF;
 }
@@ -655,19 +677,19 @@ footer a {
 
 @-webkit-keyframes slidein {
   from {
-    width: 0%;
+    width: 0px;
   }
   to {
-    width: 10%;
+    width: 50px;
   }
 }
 
 @keyframes slidein {
   from {
-    width: 0%;
+    width: 0px;
   }
   to {
-    width: 10%;
+    width: 50px;
   }
 }
 @-webkit-keyframes spin {
@@ -764,8 +786,8 @@ footer a {
   border-left: 10px solid #99E2D0;
   border-right: 10px solid #99E2D0;
   border-radius: 50%;
-  -webkit-animation: spin 2s linear 1s;
-          animation: spin 2s linear 1s;
+  -webkit-animation: tourne 2s linear 1s;
+          animation: tourne 2s linear 1s;
   opacity: 0;
   margin: auto;
   position: absolute;
@@ -775,7 +797,23 @@ footer a {
   bottom: 0;
 }
 
-@keyframes spin {
+@-webkit-keyframes tourne {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(180deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0;
+    content: "";
+  }
+}
+
+@keyframes tourne {
   0% {
     transform: rotate(0deg);
     opacity: 1;
