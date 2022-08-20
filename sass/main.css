@@ -437,6 +437,16 @@ footer a {
   color: #FFFFFF;
 }
 
+.footer_link {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer_link_icon {
+  width: 5px;
+  padding-right: 15px;
+}
+
 .like1 .fa-heart {
   font-size: 23px;
   cursor: pointer;
