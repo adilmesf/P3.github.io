@@ -197,7 +197,7 @@ main{
 
 .article_txt{
 	border-radius:20px;
-    width:300px;
+    width:350px;
 	height: 53px;
 	box-shadow: 0px 0px 15px 0 $couleur_shadow;
     background-color: $couleur_blanc;
@@ -266,7 +266,7 @@ main{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 300px;
+    width: 400px;
     @media screen and (min-width: 768px) {
         width: 400px;
      }
@@ -395,6 +395,9 @@ footer a{
    width: 5px;
    padding-right: 15px;
 }
+.like1{
+    padding-top: 15px;
+}
 .like1 .fa-heart{
     font-size: 23px;
     cursor: pointer;
@@ -456,15 +459,18 @@ footer a{
      }  
     
 }
-
-.titre_restaurant_text{
-    padding-top: 20px;
-    font-family: Shrikhand;
+#titre_restaurant h1{
     font-size: 18px;
-    padding-left: 20px;
+    font-family: Shrikhand;
+    font-weight: normal;
     @media screen and (min-width: 992px) {
         font-size: 25px;
      }  
+}
+
+.titre_restaurant_text{
+    padding-top: 20px;
+    padding-left: 20px;
 }
 .entrees_restaurant .plats_restaurants .desserts_restaurants {
     display: flex;
@@ -541,10 +547,10 @@ footer a{
     width: auto;
     overflow: hidden;
 }
-.titre_element{
+.texte_elements h2{
     font-weight: bold;
-    padding-bottom: 5px;
-    font-size: 15px;
+    padding-top: 0px;
+    font-size: 13px;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -553,6 +559,7 @@ footer a{
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    margin-top: -5px;
 }
 .groupe_element{
     display: flex;
@@ -643,7 +650,25 @@ footer a{
     }
 }
 
-#loader{
+
+#loader {
+    position: fixed;
+    width:100%;
+    height: 100%;
+    left:0;right:0;top:0;bottom:0;
+    background-color: rgba(255,255,255,1);
+    z-index: 9999;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    animation-delay: 1s;
+}
+
+
+#spinner{
     height: 100px;
     width: 100px;
     border-top: 10px solid $couleur_primaire;
@@ -660,7 +685,6 @@ footer a{
     right: 0;
     bottom: 0;
 }
-
 @keyframes tourne {
     0%{
         transform: rotate(0deg);
@@ -673,6 +697,13 @@ footer a{
     100%{
         transform: rotate(360deg);
         opacity: 0;
-        content: '';
     }
 }
+
+    @keyframes fadeIn {
+    0% {opacity: 1;}
+    100% {    
+        visibility: hidden;
+        z-index: -10;
+        opacity: 0;}
+    } 

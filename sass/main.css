@@ -208,7 +208,7 @@ main {
 
 .article_txt {
   border-radius: 20px;
-  width: 300px;
+  width: 350px;
   height: 53px;
   box-shadow: 0px 0px 15px 0 rgba(128, 128, 128, 0.748);
   background-color: #FFFFFF;
@@ -288,7 +288,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 300px;
+  width: 400px;
 }
 @media screen and (min-width: 768px) {
   #restaurants_principal {
@@ -452,6 +452,10 @@ footer a {
   padding-right: 15px;
 }
 
+.like1 {
+  padding-top: 15px;
+}
+
 .like1 .fa-heart {
   font-size: 23px;
   cursor: pointer;
@@ -525,16 +529,20 @@ footer a {
   }
 }
 
-.titre_restaurant_text {
-  padding-top: 20px;
-  font-family: Shrikhand;
+#titre_restaurant h1 {
   font-size: 18px;
-  padding-left: 20px;
+  font-family: Shrikhand;
+  font-weight: normal;
 }
 @media screen and (min-width: 992px) {
-  .titre_restaurant_text {
+  #titre_restaurant h1 {
     font-size: 25px;
   }
+}
+
+.titre_restaurant_text {
+  padding-top: 20px;
+  padding-left: 20px;
 }
 
 .entrees_restaurant .plats_restaurants .desserts_restaurants {
@@ -627,10 +635,10 @@ footer a {
   overflow: hidden;
 }
 
-.titre_element {
+.texte_elements h2 {
   font-weight: bold;
-  padding-bottom: 5px;
-  font-size: 15px;
+  padding-top: 0px;
+  font-size: 13px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -640,6 +648,7 @@ footer a {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  margin-top: -5px;
 }
 
 .groupe_element {
@@ -803,6 +812,26 @@ footer a {
 }
 
 #loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgb(255, 255, 255);
+  z-index: 9999;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 4s;
+  animation-duration: 4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+#spinner {
   height: 100px;
   width: 100px;
   border-top: 10px solid #9356DC;
@@ -833,7 +862,6 @@ footer a {
   100% {
     transform: rotate(360deg);
     opacity: 0;
-    content: "";
   }
 }
 
@@ -849,6 +877,25 @@ footer a {
   100% {
     transform: rotate(360deg);
     opacity: 0;
-    content: "";
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    visibility: hidden;
+    z-index: -10;
+    opacity: 0;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    visibility: hidden;
+    z-index: -10;
+    opacity: 0;
   }
 }/*# sourceMappingURL=main.css.map */
